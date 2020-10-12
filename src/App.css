@@ -1,0 +1,7 @@
+:root {
+    font-family: Calibri;
+    box-sizing: border-box;
+    --main-color: #367CFF;
+    --text-color: #000000;
+    --button-color: #ffffff;
+}
