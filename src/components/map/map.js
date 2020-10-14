@@ -3,7 +3,7 @@ import ReactMapGL from 'react-map-gl';
 
 const Map = () => {
 
-  const token = "pk.eyJ1IjoidmlrMSIsImEiOiJja2c5YWNqZHowOG5pMnJ2eWJvOGloM3owIn0.07KDZBZ1aTc2xGIBOm26lw";
+
 
   let setLatitude = 6.4550575;
   let setLongitude = 3.3941795;
@@ -44,7 +44,7 @@ const Map = () => {
         </div>
         <ReactMapGL 
           {...viewport} 
-          mapboxApiAccessToken={token}
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
           mapStyle="mapbox://styles/vik1/ckg9cpxi205xp19qsc0tw5el5"
           onViewportChange={viewport => {
             setViewport(viewport);
