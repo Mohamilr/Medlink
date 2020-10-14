@@ -5,10 +5,10 @@ const Search = () => {
     return (
         <div className='search-cont'>
             <div>
-           <span><i class="fas icons fa-search"></i></span><input type='text' placeholder='Search for closest facility' className='search-input' />
+           <span><i className="fas icons fa-search"></i></span><input type='text' placeholder='Search for closest facility' className='search-input' />
             </div>
             <div>
-            <span><i class="fas icons fa-map-marker-alt"></i></span><input type='text' placeholder='Set location' className='search-input'/>
+            <span><i className="fas icons fa-map-marker-alt"></i></span><input type='text' placeholder='Set location' className='search-input'/>
             </div>
             <div>
             <select className='search-select'>
