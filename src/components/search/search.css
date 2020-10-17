@@ -37,7 +37,7 @@
     .search-cont {
         display: flex;
         flex-direction: column;
-        margin: 0 2em;
+        margin: 4em 2em;
         padding: 2em 2em 0;
     }
 
