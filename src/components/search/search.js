@@ -23,7 +23,7 @@ const Search = () => {
 
             <input type='button' value='search' className='search-btn' />
         </div>
-    )
+    ) 
 }
 
 export default Search;
