@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from '../search/search';
 import Map from '../map/map';
+import Footer from '../footer/footer'
 import Nav from '../nav';
 import Banner from '../banner/banner';
 
@@ -10,7 +11,8 @@ const Home = () => {
             <Nav />
             <Banner />
             <Search />
-            <Map /> 
+            <Map />
+            <Footer/>
         </main>
     )
 }
