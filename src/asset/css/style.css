@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
-.menu ul li a:hover { 
+.menu ul li a:hover {
   color: var(--theme-color);
 }
 
@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 .menu ul li a:hover:after {
   transform: scaleX(1);
   transform-origin: left;
-} 
+}
 
 .logo {
   width: 10%;
@@ -202,5 +202,5 @@ h1, h2, h3, h4, h5, h6 {
   #dn {
     display: none;
   }
-  
+
 }

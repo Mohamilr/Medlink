@@ -42,9 +42,9 @@ const Map = () => {
             <button className="zoom-btn_clear" onClick={handleZoomout}>-</button>
           </div>
         </div>
-        <ReactMapGL 
-          {...viewport} 
-          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        <ReactMapGL
+          {...viewport}
+          mapboxApiAccessToken={'pk.eyJ1IjoidmlrMSIsImEiOiJja2c5YWNqZHowOG5pMnJ2eWJvOGloM3owIn0.07KDZBZ1aTc2xGIBOm26lw'}
           mapStyle="mapbox://styles/vik1/ckg9cpxi205xp19qsc0tw5el5"
           onViewportChange={viewport => {
             setViewport(viewport);
