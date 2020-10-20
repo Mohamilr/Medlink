@@ -7,8 +7,8 @@ import Banner from '../banner/banner';
 
 const Home = () => {
     const [results, setResults] = useState('');
-    const [lat, setLat] = useState('');
-    const [lng, setLng] = useState('');
+    const [lat, setLat] = useState(6.4550575);
+    const [lng, setLng] = useState(3.3941795);
 
     return (
         <main>

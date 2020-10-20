@@ -39,7 +39,7 @@ const Search = ({ setResults, setLat, setLng, lat, lng}) => {
     const handleSearch = async (searchKey) => {
         try {
 
-            const response = await fetch(`https://api.tomtom.com/search/2/geometrySearch/${searchKey}.json?geometryList=%5B%7B%22type%22%3A%22POLYGON%22%2C%20%22vertices%22%3A%5B%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%5D%7D%2C%20%7B%22type%22%3A%22CIRCLE%22%2C%20%22position%22%3A%22${lat}%2C%20${lng}%22%2C%20%22radius%22%3A10000%7D%5D&idxSet=POI&key=ciIsGdG3irXcWG9ukyhZfMvZ0aZUbnkU`, {
+            const response = await fetch(`https://api.tomtom.com/search/2/geometrySearch/${searchKey}.json?geometryList=%5B%7B%22type%22%3A%22POLYGON%22%2C%20%22vertices%22%3A%5B%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%5D%7D%2C%20%7B%22type%22%3A%22CIRCLE%22%2C%20%22position%22%3A%22${lat}%2C%20${lng}%22%2C%20%22radius%22%3A10000%7D%5D&limit=20&idxSet=POI&key=ciIsGdG3irXcWG9ukyhZfMvZ0aZUbnkU`, {
                 method: 'GET',
             })
             const data = await response.json();

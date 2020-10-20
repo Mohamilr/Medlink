@@ -1,36 +1,50 @@
-import React, {useState} from 'react';
-import ReactMapGL, { Marker, } from 'react-map-gl';
+import React, { useState } from "react";
+import ReactMapGL, { Marker } from "react-map-gl";
 
 const Map = ({ results, lat, lng }) => {
-
-
-
   let setLatitude = 6.4550575;
   let setLongitude = 3.3941795;
-  let setZoom = 10
+  let setZoom = 10;
 
   const [viewport, setViewport] = useState({
-    latitude: setLatitude,
-    longitude: setLongitude,
-    height: '50vh',
-    width: '90vw',
-    zoom: setZoom
+    latitude: lat,
+    longitude: lng,
+    height: "50vh",
+    width: "90vw",
+    zoom: setZoom,
   });
 
+  const [nextViewport, setNextViewport] = useState({
+    });
 
-  const handleZoomin = () => {
-
+  const currentViewPort = {
+    latitude: lat,
+    longitude: lng,
+    height: "50vh",
+    width: "90vw",
+    zoom: setZoom,
   }
 
-  const handleZoomout = () => {
+  const [interactionState, setInteractionState] = useState({
+    inTransition: true,
+    isDragging: true,
+    // isPanning: false,
+    isRotating: true,
+    isZooming: true
+  })
 
+  const handleZoomin = () => {};
+
+  const handleZoomout = () => {};
+
+  const handle = () => {
+    console.log('lat', lat)
+    console.log('lng', lng)
   }
 
   return (
     <section className="map-holder">
-
       <div className="map">
-
         <div className="text">
           <p>Nice to have you here!</p>
           <h4>See Healthare facilities aroung you</h4>
@@ -38,45 +52,76 @@ const Map = ({ results, lat, lng }) => {
 
         <div className="zoom">
           <div className="zoom-btn">
-            <button className="zoom-btn_clear" onClick={handleZoomin}>+</button>
-            <button className="zoom-btn_clear" onClick={handleZoomout}>-</button>
+            <button className="zoom-btn_clear" onClick={() => handle()}>
+              +
+            </button>
+            <button className="zoom-btn_clear" onClick={handleZoomout}>
+              -
+            </button>
           </div>
         </div>
         <ReactMapGL
-          {...viewport}
-          mapboxApiAccessToken={'pk.eyJ1IjoidmlrMSIsImEiOiJja2c5YWNqZHowOG5pMnJ2eWJvOGloM3owIn0.07KDZBZ1aTc2xGIBOm26lw'}
+          {...currentViewPort}
+          mapboxApiAccessToken={
+            "pk.eyJ1IjoidmlrMSIsImEiOiJja2c5YWNqZHowOG5pMnJ2eWJvOGloM3owIn0.07KDZBZ1aTc2xGIBOm26lw"
+          }
           mapStyle="mapbox://styles/vik1/ckg9cpxi205xp19qsc0tw5el5"
-          // onViewportChange={viewport => {
-          //   const {
-              // latitude: lat,
-              // longitude: lng,
-              // height,
-              // width,
-              // zoom: setZoom
-          //   } = viewport;
-          //   setViewport(viewport);
-          // }}
-          onViewportChange={({latitude: lat,
-            longitude: lng,
-            height: '50vh',
-            width: '90vh',
-            zoom: setZoom}, {}, {...viewport}) }
-        >
-       {results && results.map((data, index) => (
-                    <Marker key={index} latitude={data.lat} longitude={data.lng} offsetLeft={-20} offsetTop={-10} >
-                       <span><i className="fas icons fa-map-marker-alt"></i></span>
-                        {/* <Popup>{`${data.name}, ${data.address}`}</Popup> */}
-                    </Marker>
-                )
-        )}
+          onViewportChange={( nextViewport, {} , currentViewPort ) => {
+            const {height, width, latitude, longitude, zoom} = currentViewPort;
+            setViewport(currentViewPort)
 
-{/* <Marker latitude={setLatitude} longitude={setLongitude} offsetLeft={-20} offsetTop={-10}>
-<span><i className="fas icons fa-map-marker-alt"></i></span>
-        </Marker> */}
+            setNextViewport(
+              {
+                  height,
+                  width,
+                  latitude: lat,
+                  longitude: lng,
+                  zoom
+                }
+            );
+
+
+
+    //         setInteractionState({
+    //           inTransition: true,
+    // isDragging: true,
+    // isPanning: false,
+    // isRotating: true,
+    // isZooming: true
+    //         })
+    //         console.log(interactionState)
+
+
+            console.log(nextViewport)
+
+            // {
+            //   height,
+            //   width,
+            //   latitude: lat,
+            //   longitude: lng,
+            //   zoom
+            // }
+          }}
+        >
+          {results &&
+            results.map((data, index) => (
+              <Marker
+                key={index}
+                latitude={data.lat}
+                longitude={data.lng}
+                offsetLeft={-20}
+                offsetTop={-10}
+              >
+                <span>
+                  <i className="fas icons fa-map-marker-alt"></i>
+                </span>
+                {/* <Popup>{`${data.name}, ${data.address}`}</Popup> */}
+              </Marker>
+            ))}
         </ReactMapGL>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Map;
