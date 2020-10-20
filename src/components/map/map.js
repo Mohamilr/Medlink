@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import ReactMapGL from 'react-map-gl';
+import ReactMapGL, { Marker, } from 'react-map-gl';
 
-const Map = () => {
+const Map = ({ results, lat, lng }) => {
 
 
 
@@ -46,11 +46,33 @@ const Map = () => {
           {...viewport}
           mapboxApiAccessToken={'pk.eyJ1IjoidmlrMSIsImEiOiJja2c5YWNqZHowOG5pMnJ2eWJvOGloM3owIn0.07KDZBZ1aTc2xGIBOm26lw'}
           mapStyle="mapbox://styles/vik1/ckg9cpxi205xp19qsc0tw5el5"
-          onViewportChange={viewport => {
-            setViewport(viewport);
-          }}
+          // onViewportChange={viewport => {
+          //   const {
+              // latitude: lat,
+              // longitude: lng,
+              // height,
+              // width,
+              // zoom: setZoom
+          //   } = viewport;
+          //   setViewport(viewport);
+          // }}
+          onViewportChange={({latitude: lat,
+            longitude: lng,
+            height: '50vh',
+            width: '90vh',
+            zoom: setZoom}, {}, {...viewport}) }
         >
+       {results && results.map((data, index) => (
+                    <Marker key={index} latitude={data.lat} longitude={data.lng} offsetLeft={-20} offsetTop={-10} >
+                       <span><i className="fas icons fa-map-marker-alt"></i></span>
+                        {/* <Popup>{`${data.name}, ${data.address}`}</Popup> */}
+                    </Marker>
+                )
+        )}
 
+{/* <Marker latitude={setLatitude} longitude={setLongitude} offsetLeft={-20} offsetTop={-10}>
+<span><i className="fas icons fa-map-marker-alt"></i></span>
+        </Marker> */}
         </ReactMapGL>
       </div>
     </section>
