@@ -15,23 +15,23 @@ const Footer = () => {
                      Contents should not be used for medical advice, diagnosis or treatmeant.
                     </p>
                     <div className="down-grid-2 down-button-info">
-                        <a>AD CHOICES</a>
-                        <a>PRIVACY</a>
-                        <a>COOKIES</a>
-                        <a>SITEMAP</a>
+                        <p>AD CHOICES</p>
+                        <p>PRIVACY</p>
+                        <p>COOKIES</p>
+                        <p>SITEMAP</p>
                     </div>
                 </div>
             </section>
             <section className="container-fluid down-section-footer hidden-lg">
                 <div className="down-grid-2 down-button-info">
-                    <a>AD CHOICES</a>
-                    <a>PRIVACY</a>
-                    <a>COOKIES</a>
-                    <a>SITEMAP</a>
+                    <p>AD CHOICES</p>
+                    <p>PRIVACY</p>
+                    <p>COOKIES</p>
+                    <p>SITEMAP</p>
                 </div>
             </section>
         </div>
-    ) 
+    )
 }
 
 export default Footer;
