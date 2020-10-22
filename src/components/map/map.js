@@ -14,8 +14,8 @@ const Map = ({ results, lat, lng }) => {
     zoom: setZoom,
   });
 
-  const [nextViewport, setNextViewport] = useState({
-    });
+  // i made this changes
+  const [nextViewport, setNextViewport] = useState({});
 
   const currentViewPort = {
     latitude: lat,
@@ -24,23 +24,11 @@ const Map = ({ results, lat, lng }) => {
     width: "90vw",
     zoom: setZoom,
   }
-
-  const [interactionState, setInteractionState] = useState({
-    inTransition: true,
-    isDragging: true,
-    // isPanning: false,
-    isRotating: true,
-    isZooming: true
-  })
+//
 
   const handleZoomin = () => {};
 
   const handleZoomout = () => {};
-
-  const handle = () => {
-    console.log('lat', lat)
-    console.log('lng', lng)
-  }
 
   return (
     <section className="map-holder">
@@ -52,7 +40,7 @@ const Map = ({ results, lat, lng }) => {
 
         <div className="zoom">
           <div className="zoom-btn">
-            <button className="zoom-btn_clear" onClick={() => handle()}>
+            <button className="zoom-btn_clear" onClick={handleZoomin}>
               +
             </button>
             <button className="zoom-btn_clear" onClick={handleZoomout}>
@@ -61,47 +49,24 @@ const Map = ({ results, lat, lng }) => {
           </div>
         </div>
         <ReactMapGL
+        // kindly take note of this
           {...currentViewPort}
-          mapboxApiAccessToken={
-            "pk.eyJ1IjoidmlrMSIsImEiOiJja2c5YWNqZHowOG5pMnJ2eWJvOGloM3owIn0.07KDZBZ1aTc2xGIBOm26lw"
-          }
+          mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
           mapStyle="mapbox://styles/vik1/ckg9cpxi205xp19qsc0tw5el5"
-          onViewportChange={( nextViewport, {} , currentViewPort ) => {
-            const {height, width, latitude, longitude, zoom} = currentViewPort;
-            setViewport(currentViewPort)
-
-            setNextViewport(
-              {
-                  height,
-                  width,
-                  latitude: lat,
-                  longitude: lng,
-                  zoom
-                }
-            );
-
-
-
-    //         setInteractionState({
-    //           inTransition: true,
-    // isDragging: true,
-    // isPanning: false,
-    // isRotating: true,
-    // isZooming: true
-    //         })
-    //         console.log(interactionState)
-
-
-            console.log(nextViewport)
-
-            // {
-            //   height,
-            //   width,
-            //   latitude: lat,
-            //   longitude: lng,
-            //   zoom
-            // }
+          onViewportChange={(viewport ) => {
+            setViewport(viewport);
           }}
+          // i was able to make the map view change with this. but it became un-interactive
+          // onViewportChange={(nextViewport, {}, currentViewPort) => {
+          // const {height, width, latitude, longitude, zoom} = currentViewPort;
+          //   setNextViewport({
+          //         height,
+          //         width,
+          //         latitude: lat,
+          //         longitude: lng,
+          //         zoom
+          //   });
+          // }}
         >
           {results &&
             results.map((data, index) => (
@@ -115,7 +80,6 @@ const Map = ({ results, lat, lng }) => {
                 <span>
                   <i className="fas icons fa-map-marker-alt"></i>
                 </span>
-                {/* <Popup>{`${data.name}, ${data.address}`}</Popup> */}
               </Marker>
             ))}
         </ReactMapGL>
