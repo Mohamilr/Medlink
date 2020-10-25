@@ -43,8 +43,7 @@ const Search = ({ setResults, setLat, setLng, lat, lng}) => {
                 method: 'GET',
             })
             const data = await response.json();
-            console.log('lat', lat)
-            console.log('results', data)
+
             if (!data.results) {
                 return console.log('not found')
             }

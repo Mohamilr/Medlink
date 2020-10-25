@@ -24,7 +24,7 @@ const MapRenderer = ({ results, lat, lng }) => {
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                {results && results.map((data: any, index) => (
+                {results && results.map((data, index) => (
                     <Marker key={index} marker_index={index} position={[data.lat, data.lng]} icon={icon} >
                         <Popup>{`${data.name}, ${data.address}`}</Popup>
                     </Marker>
