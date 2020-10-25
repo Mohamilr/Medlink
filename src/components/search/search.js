@@ -54,6 +54,8 @@ const Search = ({ setResults, setLat, setLng, lat, lng}) => {
                return latAndLng.push({
                     lat: latlng.position.lat,
                     lng: latlng.position.lon,
+                    name: latlng.poi.name,
+                    address: latlng.address.freeformAddress,
                 })
             })
             setResults(latAndLng)
