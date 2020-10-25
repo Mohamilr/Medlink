@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Search from '../search/search';
-import MapRenderer from '../map/map';
-import Footer from '../footer/footer'
-import Nav from '../nav';
-import Banner from '../banner/banner';
+import Search from '../../components/search/search';
+import MapRenderer from '../../components/map/map';
+import Footer from '../../components/footer/footer'
+import Nav from '../../components/nav';
+import Banner from '../../components/banner/banner';
 
 const Home = () => {
     const [results, setResults] = useState('');
