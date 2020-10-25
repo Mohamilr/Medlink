@@ -4,7 +4,7 @@
   "private": true,
   "main": "server.js",
   "engines": {
-    "node": "12.16.x"
+    "node": "15.0.x"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
