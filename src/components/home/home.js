@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Search from '../search/search';
-import Map from '../map/map';
+import MapRenderer from '../map/map';
 import Footer from '../footer/footer'
 import Nav from '../nav';
 import Banner from '../banner/banner';
@@ -15,7 +15,7 @@ const Home = () => {
             <Nav />
             <Banner />
             <Search setResults={setResults} setLat={setLat} setLng={setLng} lat={lat} lng={lng} />
-            <Map results={results} lat={lat} lng={lng} />
+            <MapRenderer results={results} lat={lat} lng={lng} />
             <Footer/>
         </main>
     )
