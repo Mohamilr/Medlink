@@ -4,6 +4,8 @@ import MapRenderer from '../../components/map/map';
 import Footer from '../../components/footer/footer'
 import Nav from '../../components/nav';
 import Banner from '../../components/banner/banner';
+//
+import Box from '../../components/box';
 
 const Home = () => {
     const [results, setResults] = useState('');
@@ -15,6 +17,7 @@ const Home = () => {
             <Nav />
             <Banner />
             <Search setResults={setResults} setLat={setLat} setLng={setLng} lat={lat} lng={lng} />
+            <Box results={results} lat={lat} lng={lng} />
             <MapRenderer results={results} lat={lat} lng={lng} />
             <Footer/>
         </main>
