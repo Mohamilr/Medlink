@@ -15,19 +15,19 @@ const Footer = () => {
                      Contents should not be used for medical advice, diagnosis or treatmeant.
                     </p>
                     <div className="down-grid-2 down-button-info">
-                        <a>AD CHOICES</a>
-                        <a>PRIVACY</a>
-                        <a>COOKIES</a>
-                        <a>SITEMAP</a>
+                        <a href="#">AD CHOICES</a>
+                        <a href="#">PRIVACY</a>
+                        <a href="#">COOKIES</a>
+                        <a href="#">SITEMAP</a>
                     </div>
                 </div>
             </section>
             <section className="container-fluid down-section-footer hidden-lg">
                 <div className="down-grid-2 down-button-info">
-                    <a>AD CHOICES</a>
-                    <a>PRIVACY</a>
-                    <a>COOKIES</a>
-                    <a>SITEMAP</a>
+                    <a href="#">AD CHOICES</a>
+                    <a href="#">PRIVACY</a>
+                    <a href="#">COOKIES</a>
+                    <a href="#">SITEMAP</a>
                 </div>
             </section>
         </div>
