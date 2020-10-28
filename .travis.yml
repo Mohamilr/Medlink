@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - "node_modules"
+script:
+  - echo 'Installing Dependency!'
+  - yarn
+  - yarn run test
+notifications:
+  - email : false
