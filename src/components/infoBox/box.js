@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from "react-router-dom";
+import { detailCoordinate } from '../../actions/detailCoordAction';
 
-const Box = ({ results, lat, lng }) => {
+const Box = () => {
+  // redux state
+  const location = useSelector(state => state.location);
+  const coordinates = useSelector(state => state.coordinates);
+  const dispatch = useDispatch();
 
   const direction = async (lat, lng, destLat, destLng) => {
     try {
@@ -12,14 +18,17 @@ const Box = ({ results, lat, lng }) => {
         }
       );
       const data = await response.json();
-
+console.log('lddddddd', data)
       const lines = [];
       data.routes[0].legs[0].points.map((line) => {
         const arr = Object.values(line);
         lines.push(arr);
       });
 
-      localStorage.setItem("points", JSON.stringify(lines));
+      // redux action
+      dispatch(detailCoordinate(lines));
+
+      // localStorage.setItem("points", JSON.stringify(lines));
     } catch (e) {
       console.error(e);
     }
@@ -27,10 +36,11 @@ const Box = ({ results, lat, lng }) => {
 
   return (
     <div>
-      {results &&
-        results.map((data, index) => (
+      {coordinates &&
+        coordinates.map((data, index) => (
             <NavLink key={index} to={`/details/${data.name}`}>
-          <p onClick={() => direction(lat, lng, data.lat, data.lng)}>
+              {/*location[0] and location[1] are the starting point corrdinates while data.lat and data.lng are the destination coordinates */}
+          <p onClick={() => direction(location[0], location[1], data.lat, data.lng)}>
             {data.name}
           </p>
             </NavLink>

@@ -1,16 +1,20 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React, { useState, useCallback } from 'react';
 import _ from 'lodash';
+import { useSelector, useDispatch } from 'react-redux';
+import { locationAction } from '../../actions/locationAction';
+import { coordinateAction } from '../../actions/searchCoordinateAction';
 import Input from '../../shared/input';
 import './search.css'
 
-const Search = ({ setResults, setLat, setLng, lat, lng}) => {
+const Search = () => {
     const [searchKey, setSearchKey] = useState('');
-    // const [location, setLocation] = useState('');
-
+    // redux state
+    const location = useSelector(state => state.location);
+    const dispatch = useDispatch()
 
     // debounce call to the location api
     const delayedQuery = useCallback(_.debounce(q => handleLocation(q), 500), []);
-
 
     const handleLocation = async (location) => {
                 try {
@@ -27,8 +31,9 @@ const Search = ({ setResults, setLat, setLng, lat, lng}) => {
                         return console.log('not found')
                     }
 
-                    setLat(data.results[0].geometry.location.lat);
-                    setLng(data.results[0].geometry.location.lng);
+                    const coord = [data.results[0].geometry.location.lat, data.results[0].geometry.location.lng]
+                    // redux action
+                    dispatch(locationAction(coord));
                 }
                 catch (e) {
                     console.error(e);
@@ -39,7 +44,7 @@ const Search = ({ setResults, setLat, setLng, lat, lng}) => {
     const handleSearch = async (searchKey) => {
         try {
 
-            const response = await fetch(`https://api.tomtom.com/search/2/geometrySearch/${searchKey}.json?geometryList=%5B%7B%22type%22%3A%22POLYGON%22%2C%20%22vertices%22%3A%5B%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%2C%20%22${lat}%2C%20${lng}%22%5D%7D%2C%20%7B%22type%22%3A%22CIRCLE%22%2C%20%22position%22%3A%22${lat}%2C%20${lng}%22%2C%20%22radius%22%3A10000%7D%5D&limit=20&idxSet=POI&key=ciIsGdG3irXcWG9ukyhZfMvZ0aZUbnkU`, {
+            const response = await fetch(`https://api.tomtom.com/search/2/geometrySearch/${searchKey}.json?geometryList=%5B%7B%22type%22%3A%22POLYGON%22%2C%20%22vertices%22%3A%5B%22${location[0]}%2C%20${location[1]}%22%2C%20%22${location[0]}%2C%20${location[1]}%22%2C%20%22${location[0]}%2C%20${location[1]}%22%2C%20%22${location[0]}%2C%20${location[1]}%22%5D%7D%2C%20%7B%22type%22%3A%22CIRCLE%22%2C%20%22position%22%3A%22${location[0]}%2C%20${location[1]}%22%2C%20%22radius%22%3A10000%7D%5D&limit=20&idxSet=POI&key=ciIsGdG3irXcWG9ukyhZfMvZ0aZUbnkU`, {
                 method: 'GET',
             })
             const data = await response.json();
@@ -58,12 +63,11 @@ const Search = ({ setResults, setLat, setLng, lat, lng}) => {
                     address: latlng.address.freeformAddress,
                 })
             })
-            setResults(latAndLng)
+            dispatch(coordinateAction(latAndLng))
         }
         catch (e) {
             console.error(e)
         }
-
     }
 
     const handleSearchKey = (e) => {
