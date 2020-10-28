@@ -66,7 +66,7 @@
     .down-button-info a{
         border-right: 2px solid rgba(255, 255, 255, 0.619);
     }
-    .down-button-info a:last-child{
+    .down-button-info p:last-child{
         border: none;
     }
     
