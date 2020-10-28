@@ -2,6 +2,7 @@ import React from "react";
 import { Map, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
 import L from "leaflet";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 import "../../asset/css/style.css";
 // place indicator icon
 const icon = L.icon({
@@ -11,7 +12,9 @@ const icon = L.icon({
   iconAnchor: [24, 14],
 });
 
-const MapRenderer = ({ match }) => {
+const MapRenderer = () => {
+  // get the current url
+  const url = useLocation();
   // redux state
   const location = useSelector((state) => state.location);
   const coordinates = useSelector((state) => state.coordinates);
@@ -56,9 +59,19 @@ const MapRenderer = ({ match }) => {
             attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          {match && match.path === '/details/:id' ? (
+          {url && url.pathname.includes('/details/') ? (
             <>
-              {coordinates &&
+               <Polyline positions={coordPoints} color={"red"} weight={5} />
+              {markers &&
+                markers.map((mark, index) => (
+                  <Marker key={index} position={[mark.lat, mark.lng]}>
+                    <Popup>{`${mark.status}`}</Popup>
+                  </Marker>
+                ))}
+            </>
+          ) : (
+            <>
+            {coordinates &&
                 coordinates.map((data, index) => (
                   <Marker
                     key={index}
@@ -69,17 +82,6 @@ const MapRenderer = ({ match }) => {
                     <Popup>{`${data.name}, ${data.address}`}</Popup>
                   </Marker>
                 ))}
-            </>
-          ) : (
-            <>
-            <Polyline positions={coordPoints} color={"red"} weight={5} />
-              {markers &&
-                markers.map((mark, index) => (
-                  <Marker key={index} position={[mark.lat, mark.lng]}>
-                    <Popup>{`${mark.status}`}</Popup>
-                  </Marker>
-                ))}
-
             </>
           )}
         </Map>
