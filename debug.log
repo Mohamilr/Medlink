@@ -1,1 +1,4 @@
 [1026/080947.983:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1027/104844.145:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[1027/131302.139:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[1027/131302.139:ERROR:process_info.cc(556)] ReadMemoryInfo failed

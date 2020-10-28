@@ -2,6 +2,7 @@
   "name": "medlink",
   "version": "0.1.0",
   "private": true,
+  "main": "server.js",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -11,6 +12,10 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-form-with-constraints": "^0.16.0",
+    "express": "^4.17.1",
+    "leaflet": "1.6.0",
+    "path": "^0.12.7",
+    "react-leaflet": "2.7.0",
     "react-map-gl": "5.2.9",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
@@ -20,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "standard": "standard index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +42,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "co-exec": "^1.0",
+    "codecov": "^1.0.1",
+    "ghooks": "^1.2.4",
+    "nyc": "^7.0.0",
+    "standard": "^7.1.2"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run standard"
+    }
   }
 }

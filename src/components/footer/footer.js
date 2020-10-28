@@ -4,7 +4,7 @@ import './footer.css'
 const Footer = () => {
     return (
         <div className="down-section">
-            <section className="down-section-icons">
+            <section className="down-section-icons"> 
                 <i className="fa fa-instagram"></i>
                 <i className="fa fa-twitter-square"></i>
                 <i className="fa fa-facebook-official"></i>
@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
             </section>
         </div>
-    ) 
+    )
 }
 
 export default Footer;

@@ -53,6 +53,4 @@ import { FormWithConstraints, FieldFeedbacks, FieldFeedback } from 'react-form-w
         }
     }
 
-
-
-export default Search;
+    export default Search;
