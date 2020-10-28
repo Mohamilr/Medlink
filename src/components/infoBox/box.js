@@ -18,7 +18,7 @@ const Box = () => {
         }
       );
       const data = await response.json();
-console.log('lddddddd', data)
+
       const lines = [];
       data.routes[0].legs[0].points.map((line) => {
         const arr = Object.values(line);
@@ -27,8 +27,6 @@ console.log('lddddddd', data)
 
       // redux action
       dispatch(detailCoordinate(lines));
-
-      // localStorage.setItem("points", JSON.stringify(lines));
     } catch (e) {
       console.error(e);
     }
