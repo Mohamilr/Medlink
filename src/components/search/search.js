@@ -97,8 +97,8 @@ const Search = ({ setResults, setLat, setLng, lat, lng}) => {
                 <option>Specialty</option>
                 <option>Dentists</option>
                 <option>Gynecologists</option>
-                <option>Optamologists</option>
-                <option>Pediatritians</option>
+                <option>Opthamologists</option>
+                <option>Pediatricians</option>
                 <option>Cardiologists</option>
             </select>
             </div> */}
