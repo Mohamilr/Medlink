@@ -118,6 +118,7 @@ const Search = () => {
     setSearchKey(e.target.value);
   };
 
+<<<<<<< HEAD
   return (
     <div className="search-cont">
       <div className="form-group">
@@ -144,6 +145,30 @@ const Search = () => {
         />
       </div>
       {/* <div className="form-group">
+=======
+    return (
+        <div className='search-cont'>
+            <div className="form-group">
+                <span><i className="fas icons fa-search"></i></span>
+                <Input
+                type='text'
+                placeholder='Search for closest facility'
+                className='search-input form-control'
+                value={searchKey}
+                onChange={e => handleSearchKey(e)}
+                />
+            </div>
+            <div className="form-group">
+                <span><i className="fas icons fa-map-marker-alt"></i></span>
+                <Input
+                type='text'
+                placeholder='Set location e.g Ikeja, Nigeria'
+                className='search-input form-control'
+                onChange={e => delayedQuery(e.target.value)}
+                />
+            </div>
+            {/* <div className="form-group">
+>>>>>>> 342794bcf111a493bf489c23cb33d13c33807c2c
             <select className='search-select form-control' onChange={e => console.log(e.target.value)}>
                 <option>Specialty</option>
                 <option>Dentists</option>
