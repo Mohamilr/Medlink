@@ -50,9 +50,9 @@
     border-right: 1px solid #777575;
 }
 
-.form-group:nth-child(2) {
+/* .form-group:nth-child(2) {
     border: none;
-}
+} */
 
 .form-control {
     width: 90%;
