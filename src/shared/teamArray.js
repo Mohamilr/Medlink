@@ -4,7 +4,7 @@ const TeamInfo = [
         name: 'Victor Nwoguru',
         email: 'vnwoguru@gmail.com',
         role: 'Front end Developer',
-        github: '',
+        github: 'https://github.com/vkguru',
         twitter: ''
     },
     {
@@ -12,7 +12,7 @@ const TeamInfo = [
         name: 'Rukayyah Ibrahim',
         email: 'Irshittabey@gmail.com',
         role: 'Front end Developer',
-        github: '',
+        github: 'https://github.com/iamadoctorforreal',
         twitter: ''
     },
     {
@@ -20,15 +20,15 @@ const TeamInfo = [
         name: 'Kenechukwu Ifediorah',
         email: 'ifediorah.kenechukwu@gmail.com',
         role: 'Cloud Engineer',
-        github: '',
+        github: 'https://github.com/eepheanyee',
         twitter: ''
     },
     {
         img: 'https://res.cloudinary.com/project-s/image/upload/v1604008599/T014MB44SS2-U015PT14CN7-g0fbacf1e9f1-512_hvwj1d.png',
         name: 'Muili Kazeem',
         email: 'Muiliquazeem@gmail.com',
-        role: 'Front end Dev',
-        github: '',
+        role: 'Cloud Engineer',
+        github: 'https://github.com/Muili-Kazeem',
         twitter: ''
     },
     {
@@ -36,15 +36,15 @@ const TeamInfo = [
         name: 'Mohammed Ibrahim',
         email: 'ibrahimdamy7@gmail.com',
         role: 'Backend Developer',
-        github: '',
-        twitter: ''
+        github: 'https://github.com/Mohamilr',
+        twitter: 'https://twitter.com/Ibrahimdamy7'
     },
     {
         img: 'https://res.cloudinary.com/project-s/image/upload/v1604008756/T014MB44SS2-U0162QM2PDW-1b4ad984e3ba-512_oldpy0.jpg',
         name: 'Chinyerem Emmanuel',
         email: 'kelvinesthy@gmail.com',
         role: 'Front end Developer',
-        github: '',
+        github: 'https://github.com/Kelvinesthy',
         twitter: ''
     },
 ]

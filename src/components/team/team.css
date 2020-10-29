@@ -1,8 +1,8 @@
 .team-cont {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    margin: 2rem ;
+    grid-gap: 20px;
+    margin: 2rem 5rem;
 }
 
 .team {
@@ -16,13 +16,18 @@
 }
 
 .team > img {
-    width: 100%;
-    height: 20em;
+    width: 60%;
+    height: 15em;
     border-radius: 50%;
 }
 
 .team > p {
     margin: 20px;
+}
+
+.name {
+    font-weight: bold;
+    color: var(--main-color);
 }
 
 .social {
@@ -43,5 +48,6 @@
     .team-cont {
         display: flex;
         flex-direction: column;
+        margin: 2rem 10px;
     }
 }

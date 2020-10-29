@@ -8,11 +8,11 @@ const Team = () => {
       {TeamInfo.map((team) => (
         <div className="team">
           <img src={team.img}></img>
-          <p>{team.name}</p>
+          <p className='name'>{team.name}</p>
           <p>{team.role}</p>
-          <a mailto={team.role}>{`${team.email}`}</a>
+          <a href={`mailto:${team.email}`}>{`${team.email}`}</a>
           <div className="social">
-            <a href={team.github}>
+            <a href={team.github} target='_blank' rel='noopener noreferrer'>
               <i className="fab social-icons fa-github"></i>
             </a>
             <a href={team.twitter}>
