@@ -15,7 +15,7 @@ const Nav = () => {
           <div className="logo">
 
             <Link to="/">
-              <img src={logo} alt="medlink logo" />
+              <img src={'https://res.cloudinary.com/project-s/image/upload/v1603972199/Logo_pp1akc.png'} alt="medlink logo" />
             </Link>
 
           </div>
