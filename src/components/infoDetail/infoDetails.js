@@ -1,6 +1,5 @@
 import React from 'react';
-import './infoDetails.css'
-import {detailsBanner} from '../../asset/img/detailbanner.png';
+import './infoDetails.css';
 
 const InfoDetails = () => {
 

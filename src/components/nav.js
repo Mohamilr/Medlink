@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Nav = () => {
+const Nav = (props) => {
 
   const [menuactive, setMenuactive] = useState(false);
 
@@ -23,11 +23,11 @@ const Nav = () => {
 
             <ul>
 
-              <li><Link to="/">Home</Link></li>
+              <li><Link to="/" className={props.home}>Home</Link></li>
 
-              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/about" className={props.about}>About Us</Link></li>
 
-              <li><Link to="/history">Search History</Link></li>
+              <li><Link to="/history" className={props.history}>Search History</Link></li>
 
             </ul>
 

@@ -1,0 +1,68 @@
+.history-hero {
+  min-height: 200px;
+  background: url(../../asset/img/detailbanner.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.history-hero h3 {
+  padding: 5rem 0 0 2rem;
+  color: #020b59;
+  font-size: 3rem;
+}
+
+.recent-search {
+  margin: 3rem auto 5rem;
+  width: 80%;
+}
+.recent-search h3 {
+  font-size: 2rem;
+  text-align: center;
+  color: #0B2963;
+}
+
+.history-bar {
+  display: flex;
+  margin: 2rem auto 0;
+  padding: 2rem 1rem;
+  border: 1px solid #0B2963;
+  width: 50%;
+  justify-content: space-around;
+  box-shadow: 0px 0px 1px #77757563;
+}
+
+.history-bar p {
+  font-size: 1.2rem;
+  color: #0B2963;
+}
+
+.history-bar p span {
+  padding-right: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .history-bar {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .history-hero h3 {
+    padding: 5rem 0 0 2rem;
+    font-size: 1.5rem;
+  }
+
+  .history-bar {
+    width: 100%;
+  }
+
+  .history-bar p {
+    font-size: 0.95rem;
+  }
+
+  .history-hero {
+    margin-top: -3rem;
+  }
+
+}
