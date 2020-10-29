@@ -5,8 +5,12 @@ import Footer from '../../components/footer/footer'
 import Nav from '../../components/nav';
 import Banner from '../../components/banner/banner';
 import Box from '../../components/infoBox/box';
+import { useDispatch } from 'react-redux';
+import { locationAction } from '../../actions/locationAction';
 
 const Home = () => {
+    const dispatch = useDispatch();
+
     if('geolocation' in navigator){
         navigator.geolocation.getCurrentPosition(setPosition, showError);
     }else{
@@ -18,13 +22,12 @@ const Home = () => {
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
         let local = [ latitude, longitude ];
-        console.log(latitude, longitude);
-
-      window.localStorage.setItem("coordinates", JSON.stringify(local));
+        // redux action
+        dispatch(locationAction(local));
     };
 
    function showError(error){
-        alert (` ${error.message}`) ;
+        console.log(` ${error.message}`) ;
     }
 
     return (
@@ -37,8 +40,6 @@ const Home = () => {
             <Footer/>
         </main>
     )
-
-
 }
 
 export default Home;
