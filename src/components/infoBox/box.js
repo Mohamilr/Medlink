@@ -43,16 +43,21 @@ const Box = () => {
             <div className="box" onClick={() =>
                 direction(location[0], location[1], data.lat, data.lng)
               }>
-              <p>
+              <div className="box-content">
+
                 <i className="fas fa-cross"></i>
-              </p>
-              <div>
-                <p>
-                  <i className="far icons fa-hospital"></i>{" "}
+
+                <p className="box-content_m">
+                  <span>
+                    <i className="far icons fa-hospital"></i>
+                  </span>{" "}
                 {`${data.name}`}
                 </p>
-                <p>
-                  <i className="fas icons fa-map-marker-alt"></i>
+
+                <p className="box-content_m">
+                  <span>
+                    <i className="fas icons fa-map-marker-alt"></i>
+                  </span>
                   {`${data.address}`}
                 </p>
               </div>
