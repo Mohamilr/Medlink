@@ -1,6 +1,4 @@
 import React from 'react';
-import bannerImage from '../../asset/img/banner.jpg';
-import cross from '../../asset/img/medlink-cross.png';
 import './banner.css';
 
 const Banner = () => {
