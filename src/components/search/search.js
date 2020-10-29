@@ -124,10 +124,12 @@ const Search = () => {
                 <span><i className="fas icons fa-search"></i></span>
                 <Input
                 type='text'
-                placeholder='Search for closest facility'
+                placeholder='Search for closest facility e.g hospital, pharmacy, optician'
                 className='search-input form-control'
                 value={searchKey}
                 onChange={e => handleSearchKey(e)}
+                required
+                spellcheck="true"
                 />
             </div>
             <div className="form-group">
@@ -137,6 +139,8 @@ const Search = () => {
                 placeholder='Set location e.g Ikeja, Nigeria'
                 className='search-input form-control'
                 onChange={e => delayedQuery(e.target.value)}
+                required
+                spellcheck="true"
                 />
             </div>
             {/* <div className="form-group">
