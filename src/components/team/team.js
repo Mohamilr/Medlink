@@ -15,7 +15,7 @@ const Team = () => {
             <a href={team.github} target='_blank' rel='noopener noreferrer'>
               <i className="fab social-icons fa-github"></i>
             </a>
-            <a href={team.twitter}>
+            <a href={team.twitter} target='_blank' rel='noopener noreferrer'>
               <i className="fab social-icons fa-twitter"></i>
             </a>
           </div>
