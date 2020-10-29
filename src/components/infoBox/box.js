@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { detailCoordinate } from "../../actions/detailCoordAction";
 import "./box.css";
-import cross from "../../asset/img/medlink-cross.png";
+// import cross from "../../asset/img/medlink-cross.png";
 
 const Box = () => {
   // redux state
@@ -34,11 +34,16 @@ const Box = () => {
     }
   };
 
+  // const storeDetails = () => {
+  //   localStorage.setItem('facname__', data.name);
+  //   localStorage.setItem('facadd__', data.address);
+  // }
+
   return (
     <div className="box-cont">
       {coordinates &&
         coordinates.map((data, index) => (
-          <NavLink key={index} to={`/details/${data.name}`}>
+          <NavLink key={index} to={`/details/${data.name}`} onClick={()=>{localStorage.setItem('facname__', data.name); localStorage.setItem('facadd__', data.address);}}>
             {/*location[0] and location[1] are the starting point corrdinates while data.lat and data.lng are the destination coordinates */}
             <div className="box" onClick={() =>
                 direction(location[0], location[1], data.lat, data.lng)

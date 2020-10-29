@@ -91,7 +91,7 @@ const Search = () => {
                 <span><i className="fas icons fa-map-marker-alt"></i></span>
                 <Input
                 type='text'
-                placeholder='Set location'
+                placeholder='Set location e.g Ikeja, Nigeria'
                 className='search-input form-control'
                 onChange={e => delayedQuery(e.target.value)}
                 />

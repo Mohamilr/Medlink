@@ -1,0 +1,55 @@
+:root {
+  --grad: linear-gradient(180.52deg, #020B59 9.11%, rgba(4, 105, 167, 0.63656) 34.26%, rgba(6, 208, 252, 0.24) 72.88%);
+
+}
+
+.details {
+  min-height: 500px;
+  background: url(../../asset/img/detailbanner.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.details-main {
+  width: 50%;
+  padding: 10rem 0 5rem 5rem;
+}
+
+.details-main h3 {
+  font-size: 3rem;
+  color: #020b59;
+}
+
+.details-main--info {
+  margin-top: 2rem;
+}
+
+.details-main--info h4 {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.details-main--info p {
+  font-size: 1.3rem;
+  padding-bottom: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .details-main {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .details {
+    margin-top: -3rem;
+  }
+
+  .details-main {
+    padding: 10rem 2rem 2rem;
+  }
+
+  .details-main--info p {
+    line-height: 30px;
+  }
+}
