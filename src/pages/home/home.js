@@ -27,7 +27,7 @@ const Home = () => {
     };
 
    function showError(error){
-        alert (` ${error.message}`) ;
+        console.log(` ${error.message}`) ;
     }
 
     return (
