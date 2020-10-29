@@ -48,7 +48,7 @@ const Search = () => {
                 method: 'GET',
             })
             const data = await response.json();
-
+            console.log(data)
             if (!data.results) {
                 return console.log('not found')
             }
