@@ -1,12 +1,14 @@
 import React from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { detailCoordinate } from '../../actions/detailCoordAction';
+import { detailCoordinate } from "../../actions/detailCoordAction";
+import "./box.css";
+import cross from "../../asset/img/medlink-cross.png";
 
 const Box = () => {
   // redux state
-  const location = useSelector(state => state.location);
-  const coordinates = useSelector(state => state.coordinates);
+  const location = useSelector((state) => state.location);
+  const coordinates = useSelector((state) => state.coordinates);
   const dispatch = useDispatch();
 
   const direction = async (lat, lng, destLat, destLng) => {
@@ -33,15 +35,29 @@ const Box = () => {
   };
 
   return (
-    <div>
+    <div className="box-cont">
       {coordinates &&
         coordinates.map((data, index) => (
-            <NavLink key={index} to={`/details/${data.name}`}>
-              {/*location[0] and location[1] are the starting point corrdinates while data.lat and data.lng are the destination coordinates */}
-          <p onClick={() => direction(location[0], location[1], data.lat, data.lng)}>
-            {data.name}
-          </p>
-            </NavLink>
+          <NavLink key={index} to={`/details/${data.name}`}>
+            {/*location[0] and location[1] are the starting point corrdinates while data.lat and data.lng are the destination coordinates */}
+            <div className="box" onClick={() =>
+                direction(location[0], location[1], data.lat, data.lng)
+              }>
+              <p>
+                <i className="fas fa-cross"></i>
+              </p>
+              <div>
+                <p>
+                  <i className="far icons fa-hospital"></i>{" "}
+                {`${data.name}`}
+                </p>
+                <p>
+                  <i className="fas icons fa-map-marker-alt"></i>
+                  {`${data.address}`}
+                </p>
+              </div>
+            </div>
+          </NavLink>
         ))}
     </div>
   );
