@@ -20,7 +20,7 @@ const History = () => {
 
         <h3>Recent Search</h3>
 
-        {storedSearch.map((data) => (
+        {storedSearch ? storedSearch.map((data) => (
           <div key={data.searchKey} className="history-bar">
             <p>
               <span>
@@ -37,7 +37,11 @@ const History = () => {
             </p>
 
           </div>
-        ))}
+        ))
+      :
+      (
+        <p className='no-history'>No search history</p>
+      )}
       </section>
       <Footer />
     </>
