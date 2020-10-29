@@ -32,7 +32,7 @@ const Home = () => {
 
     return (
         <main>
-            <Nav />
+            <Nav home="active"/>
             <Banner />
             <Search />
             <Box />
