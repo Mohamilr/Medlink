@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { detailCoordinate } from "../../actions/detailCoordAction";
 import "./box.css";
-import cross from "../../asset/img/medlink-cross.png";
 
 const Box = () => {
   // redux state
