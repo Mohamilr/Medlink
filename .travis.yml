@@ -7,6 +7,6 @@ cache:
 script:
   - echo 'Installing Dependency!'
   - yarn
-  - yarn run test
+  - yarn run test a
 notifications:
   - email : false

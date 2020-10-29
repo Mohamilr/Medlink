@@ -11,7 +11,7 @@ exports[`renders banner text 1`] = `
       >
         <img
           alt="Banner"
-          src="banner.jpg"
+          src="https://res.cloudinary.com/project-s/image/upload/v1603972201/banner_eunugo.jpg"
         />
       </div>
       <div
@@ -22,7 +22,7 @@ exports[`renders banner text 1`] = `
         >
           <img
             alt="Hospital Cross"
-            src="medlink-cross.png"
+            src="https://res.cloudinary.com/project-s/image/upload/v1603972199/medlink-cross_mpqhag.png"
           />
           <h3>
             Medlink
