@@ -1,4 +1,4 @@
-const location = (state = [6.4550575, 3.3941795], action) => {
+const location = (state = [7.3775, 3.9470], action) => {
     switch(action.type) {
         case 'latlng':
             return state = action.data;
