@@ -4,3 +4,10 @@ export const locationAction = data => {
         data
     }
 }
+
+export const placeAction = data => {
+    return {
+        type: 'place',
+        data
+    }
+}
