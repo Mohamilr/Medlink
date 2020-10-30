@@ -48,7 +48,7 @@ const MapRenderer = () => {
       <div className="map">
         <div className="text">
           <p>Nice to have you here!</p>
-          <h4>See Healthare facilities aroung you</h4>
+          <h4>See Healthare facilities around you</h4>
         </div>
         <Map
           center={[location[0], location[1]]}
