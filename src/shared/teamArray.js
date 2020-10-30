@@ -3,7 +3,7 @@ const TeamInfo = [
         img: 'https://res.cloudinary.com/project-s/image/upload/v1604008232/T014MB44SS2-U01555HBXFX-49c9dbeb4843-512_s6ydqg.jpg',
         name: 'Victor Nwoguru',
         email: 'vnwoguru@gmail.com',
-        role: 'Front end Developer',
+        role: 'Front End Developer',
         github: 'https://github.com/vkguru',
         twitter: ''
     },
@@ -11,7 +11,7 @@ const TeamInfo = [
         img: 'https://res.cloudinary.com/project-s/image/upload/v1604008384/T014MB44SS2-U014ZRPEE6A-3038c45aae8a-512_wep7lo.jpg',
         name: 'Rukayyah Ibrahim',
         email: 'Irshittabey@gmail.com',
-        role: 'Front end Developer',
+        role: 'Front End Developer',
         github: 'https://github.com/iamadoctorforreal',
         twitter: ''
     },
@@ -32,10 +32,10 @@ const TeamInfo = [
         twitter: ''
     },
     {
-        img: 'https://res.cloudinary.com/project-s/image/upload/v1604008687/T014MB44SS2-U014RNMMXFZ-g726b8843cd2-512_sadqj4.png',
+        img: 'https://res.cloudinary.com/project-s/image/upload/v1604044372/IMG_20200829_124146_nkaybr.jpg',
         name: 'Mohammed Ibrahim',
         email: 'ibrahimdamy7@gmail.com',
-        role: 'Backend Developer',
+        role: 'Back End Developer',
         github: 'https://github.com/Mohamilr',
         twitter: 'https://twitter.com/Ibrahimdamy7'
     },
@@ -43,7 +43,7 @@ const TeamInfo = [
         img: 'https://res.cloudinary.com/project-s/image/upload/v1604008756/T014MB44SS2-U0162QM2PDW-1b4ad984e3ba-512_oldpy0.jpg',
         name: 'Chinyerem Emmanuel',
         email: 'kelvinesthy@gmail.com',
-        role: 'Front end Developer',
+        role: 'Front End Developer',
         github: 'https://github.com/Kelvinesthy',
         twitter: ''
     },
