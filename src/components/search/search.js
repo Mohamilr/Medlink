@@ -129,14 +129,14 @@ const Search = () => {
           onChange={(e) => handleSearchKey(e)}
         >
           <option>Hospital</option>
-          <option>Dental</option>
-          <option>Pharmacy</option>
           <option>Clinic</option>
-          <option>Optical</option>
-          <option>physiotherapy</option>
-          <option>X - ray</option>
-          <option>Scan</option>
+          <option>Dental</option>
           <option>Laboratory</option>
+          <option>Optical</option>
+          <option>Pharmacy</option>
+          <option>Physiotherapy</option>
+          <option>Scan</option>
+          <option>X - ray</option>
         </select>
         {/* <Input
                 type='text'
