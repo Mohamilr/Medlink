@@ -1,0 +1,19 @@
+.about-app {
+    text-align: center;
+    margin: 2em;
+}
+
+.about-app h2 {
+    font-size: 20px;
+    margin: 1em;
+    color:  #020b59;
+}
+.about-app p {
+    font-size: 20px;
+    font-family: inherit;
+}
+
+section > h1 {
+    text-align: center;
+    color: #020b59;
+}
