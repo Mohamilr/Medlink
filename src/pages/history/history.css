@@ -40,6 +40,11 @@
   padding-right: 10px;
 }
 
+.no-history {
+  text-align: center;
+  margin: 10em 0;
+}
+
 
 @media screen and (max-width: 768px) {
   .history-bar {

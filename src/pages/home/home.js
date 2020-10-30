@@ -6,7 +6,7 @@ import Nav from '../../components/nav';
 import Banner from '../../components/banner/banner';
 import Box from '../../components/infoBox/box';
 import { useDispatch } from 'react-redux';
-import { locationAction } from '../../actions/locationAction';
+import { locationAction, placeAction } from '../../actions/locationAction';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -22,9 +22,13 @@ const Home = () => {
         let latitude = position.coords.latitude;
         let longitude = position.coords.longitude;
         let local = [ latitude, longitude ];
+
         // redux action
         dispatch(locationAction(local));
+        // user location saved for the details page map
+        dispatch(placeAction(local));
     };
+
 
    function showError(error){
         console.log(` ${error.message}`) ;
