@@ -5,11 +5,13 @@ import { detailCoordinate } from "../../actions/detailCoordAction";
 import "./box.css";
 // import cross from "../../asset/img/medlink-cross.png";
 
-
 const Box = () => {
   // redux state
   const location = useSelector((state) => state.location);
   const coordinates = useSelector((state) => state.coordinates);
+  // user coordinates if geolocation is enabled
+  const place = useSelector((state) => state.place);
+  console.log('place',place)
   const dispatch = useDispatch();
 
   const direction = async (lat, lng, destLat, destLng) => {
@@ -44,20 +46,31 @@ const Box = () => {
     <div className="box-cont">
       {coordinates &&
         coordinates.map((data, index) => (
-          <NavLink key={index} to={`/details/${data.name}`} onClick={()=>{localStorage.setItem('facname__', data.name); localStorage.setItem('facadd__', data.address);}}>
+          <NavLink
+            key={index}
+            to={`/details/${data.name}`}
+            onClick={() => {
+              localStorage.setItem("facname__", data.name);
+              localStorage.setItem("facadd__", data.address);
+            }}
+          >
             {/*location[0] and location[1] are the starting point corrdinates while data.lat and data.lng are the destination coordinates */}
-            <div className="box" onClick={() =>
-                direction(location[0], location[1], data.lat, data.lng)
-              }>
+            <div
+              className="box"
+              onClick={() => {
+                place.length !== 0
+                  ? direction(place[0], place[1], data.lat, data.lng)
+                  : direction(location[0], location[1], data.lat, data.lng);
+              }}
+            >
               <div className="box-content">
-
                 <i className="fas fa-cross"></i>
 
                 <p className="box-content_m">
                   <span>
                     <i className="far icons fa-hospital"></i>
                   </span>{" "}
-                {`${data.name}`}
+                  {`${data.name}`}
                 </p>
 
                 <p className="box-content_m">

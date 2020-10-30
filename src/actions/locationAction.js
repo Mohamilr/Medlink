@@ -5,7 +5,6 @@ export const locationAction = data => {
     }
 }
 
-// it does nothing for now
 export const placeAction = data => {
     return {
         type: 'place',

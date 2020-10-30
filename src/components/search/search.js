@@ -128,6 +128,7 @@ const Search = () => {
           className="search-select form-control"
           onChange={(e) => handleSearchKey(e)}
         >
+          <option>Specialty</option>
           <option>Hospital</option>
           <option>Clinic</option>
           <option>Dental</option>
