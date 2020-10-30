@@ -144,7 +144,7 @@ const Search = () => {
 
           {/* <option>Paediatrician</option> */}
         </select>
-        {/* <Input
+         {/* <Input
                 type='text'
                 placeholder='Search for closest facility e.g hospital, pharmacy, optician'
                 className='search-input form-control'
@@ -152,7 +152,7 @@ const Search = () => {
                 onChange={e => handleSearchKey(e)}
                 required
                 spellcheck="true"
-                />
+                /> */}
             </div>
             <div className="form-group">
                 <span><i className="fas icons fa-map-marker-alt"></i></span>
