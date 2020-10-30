@@ -131,12 +131,17 @@ const Search = () => {
           <option>Hospital</option>
           <option>Clinic</option>
           <option>Dental</option>
+          <option>General Surgeon</option>
           <option>Laboratory</option>
           <option>Optical</option>
           <option>Pharmacy</option>
+          {/* <option>Psychiatrist</option> */}
           <option>Physiotherapy</option>
           <option>Scan</option>
           <option>X - ray</option>
+          {/* <option>Neurologist</option> */}
+
+          {/* <option>Paediatrician</option> */}
         </select>
         {/* <Input
                 type='text'
