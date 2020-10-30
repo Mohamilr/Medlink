@@ -7,7 +7,7 @@ const Team = () => {
     <div className="team-cont">
       {TeamInfo.map((team) => (
         <div className="team">
-          <img src={team.img}></img>
+          <img src={team.img} alt={team.name}></img>
           <p className='name'>{team.name}</p>
           <p>{team.role}</p>
           <a href={`mailto:${team.email}`}>{`${team.email}`}</a>
