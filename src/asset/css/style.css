@@ -162,6 +162,10 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
 }
 
+.leaflet-left .leaflet-control {
+  margin-left: 30px;
+}
+
 @media screen and (max-width: 600px) {
   .map-holder {
     margin-top: 100px;

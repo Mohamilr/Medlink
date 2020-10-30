@@ -3,7 +3,8 @@
 .footer {
     text-align: center;
     background-color: var(--main-color);
-    height: 2em;
+    padding: 20px;
+    margin-top: 5rem;
 }
 
 .footer > p {
