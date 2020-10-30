@@ -10,7 +10,7 @@ const Team = () => {
           <img src={team.img} alt={team.name}></img>
           <p className='name'>{team.name}</p>
           <p>{team.role}</p>
-          <a href={`mailto:${team.email}`}>{`${team.email}`}</a>
+          <a className="mail" href={`mailto:${team.email}`}>Contact</a>
           <div className="social">
             <a href={team.github} target='_blank' rel='noopener noreferrer'>
               <i className="fab social-icons fa-github"></i>

@@ -152,22 +152,20 @@ const Search = () => {
                 onChange={e => handleSearchKey(e)}
                 required
                 spellcheck="true"
-                /> */}
-      </div>
-      <div className="form-group">
-        <span>
-          <i className="fas icons fa-map-marker-alt"></i>
-        </span>
-        <Input
-          type="text"
-          placeholder="Set location e.g Ikeja, Nigeria"
-          className="search-input form-control"
-          onChange={(e) => delayedQuery(e.target.value)}
-          required
-          spellcheck="true"
-        />
-      </div>
-      {/* <div className="form-group">
+                />
+            </div>
+            <div className="form-group">
+                <span><i className="fas icons fa-map-marker-alt"></i></span>
+                <Input
+                type='text'
+                placeholder='Set location e.g Ikeja, Nigeria'
+                className='search-input form-control'
+                onChange={e => delayedQuery(e.target.value)}
+                required
+                spellcheck="true"
+                />
+            </div>
+            {/* <div className="form-group">
             <select className='search-select form-control' onChange={e => console.log(e.target.value)}>
                 <option>Specialty</option>
                 <option>Dentists</option>
