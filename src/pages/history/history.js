@@ -6,7 +6,6 @@ import './history.css';
 const History = () => {
 
   let storedSearch = JSON.parse(localStorage.getItem('search-data'));
-  console.log(storedSearch);
   return (
     <>
 

@@ -7,6 +7,7 @@ export const location = (state = [7.3775, 3.9470], action) => {
     }
 }
 
+// it does nothing for now
 export const place = (state = [], action) => {
     switch(action.type) {
         case 'place':
