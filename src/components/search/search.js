@@ -56,7 +56,7 @@ const Search = () => {
           headers: {
             "x-rapidapi-host": "google-maps-geocoding.p.rapidapi.com",
             "x-rapidapi-key":
-              "feb5a7b223msh76b7a43e38446bfp1eb31ajsne300800cf916",
+              "2b140728d4msh9fed995ffd67651p16455cjsnd6c6d9e20a66",
           },
         }
       );

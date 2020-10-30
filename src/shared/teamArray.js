@@ -5,7 +5,7 @@ const TeamInfo = [
         email: 'vnwoguru@gmail.com',
         role: 'Front End Developer',
         github: 'https://github.com/vkguru',
-        twitter: ''
+        twitter: 'https://twitter.com/vichukwu'
     },
     {
         img: 'https://res.cloudinary.com/project-s/image/upload/v1604008384/T014MB44SS2-U014ZRPEE6A-3038c45aae8a-512_wep7lo.jpg',
