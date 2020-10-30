@@ -23,7 +23,6 @@ const Home = () => {
         let longitude = position.coords.longitude;
         let local = [ latitude, longitude ];
 
-        console.log(local)
         // redux action
         dispatch(locationAction(local));
         // user location saved for the details page map

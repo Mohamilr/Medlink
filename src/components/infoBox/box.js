@@ -11,7 +11,6 @@ const Box = () => {
   const coordinates = useSelector((state) => state.coordinates);
   // user coordinates if geolocation is enabled
   const place = useSelector((state) => state.place);
-  console.log('place',place)
   const dispatch = useDispatch();
 
   const direction = async (lat, lng, destLat, destLng) => {
