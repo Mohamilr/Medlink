@@ -39,13 +39,13 @@ const Search = () => {
     } else {
       // let oldLocal = JSON.parse(local);
       let newLocal = oldLocal;
-      if(newLocal.length >= 5) {
-          newLocal.shift();
+      if (newLocal.length >= 5) {
+        newLocal.shift();
       }
       newLocal.push(store);
       localStorage.setItem("search-data", JSON.stringify(newLocal));
     }
-  }
+  };
 
   const handleLocation = async (location) => {
     try {
@@ -118,11 +118,32 @@ const Search = () => {
     setSearchKey(e.target.value);
   };
 
-    return (
-        <div className='search-cont'>
-            <div className="form-group">
-                <span><i className="fas icons fa-search"></i></span>
-                <Input
+  return (
+    <div className="search-cont">
+      <div className="form-group">
+        <span>
+          <i className="fas icons fa-search"></i>
+        </span>
+        <select
+          className="search-select form-control"
+          onChange={(e) => handleSearchKey(e)}
+        >
+          <option>Hospital</option>
+          <option>Clinic</option>
+          <option>Dental</option>
+          <option>General Surgeon</option>
+          <option>Laboratory</option>
+          <option>Optical</option>
+          <option>Pharmacy</option>
+          {/* <option>Psychiatrist</option> */}
+          <option>Physiotherapy</option>
+          <option>Scan</option>
+          <option>X - ray</option>
+          {/* <option>Neurologist</option> */}
+
+          {/* <option>Paediatrician</option> */}
+        </select>
+        {/* <Input
                 type='text'
                 placeholder='Search for closest facility e.g hospital, pharmacy, optician'
                 className='search-input form-control'
@@ -130,20 +151,22 @@ const Search = () => {
                 onChange={e => handleSearchKey(e)}
                 required
                 spellcheck="true"
-                />
-            </div>
-            <div className="form-group">
-                <span><i className="fas icons fa-map-marker-alt"></i></span>
-                <Input
-                type='text'
-                placeholder='Set location e.g Ikeja, Nigeria'
-                className='search-input form-control'
-                onChange={e => delayedQuery(e.target.value)}
-                required
-                spellcheck="true"
-                />
-            </div>
-            {/* <div className="form-group">
+                /> */}
+      </div>
+      <div className="form-group">
+        <span>
+          <i className="fas icons fa-map-marker-alt"></i>
+        </span>
+        <Input
+          type="text"
+          placeholder="Set location e.g Ikeja, Nigeria"
+          className="search-input form-control"
+          onChange={(e) => delayedQuery(e.target.value)}
+          required
+          spellcheck="true"
+        />
+      </div>
+      {/* <div className="form-group">
             <select className='search-select form-control' onChange={e => console.log(e.target.value)}>
                 <option>Specialty</option>
                 <option>Dentists</option>
