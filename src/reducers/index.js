@@ -1,11 +1,12 @@
 import { combineReducers } from 'redux';
-import location from './locationReducer';
+import { place, location } from './locationReducer';
 import searchCoordinates from './searchCoordinatesReducer';
 import detailsCoordinate from './detailsCoordReducer';
 
 
 const allReducers = combineReducers({
     location: location,
+    place: place,
     coordinates: searchCoordinates,
     detailsCoordinates: detailsCoordinate
 })
