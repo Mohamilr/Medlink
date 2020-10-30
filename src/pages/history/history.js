@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from '../../components/nav';
+import Footer from '../../components/footer/footer';
 import './history.css';
 
 const History = () => {
@@ -34,10 +35,11 @@ const History = () => {
               </span>
               {data.locationText}
             </p>
-           
+
           </div>
         ))}
       </section>
+      <Footer />
     </>
   )
 }

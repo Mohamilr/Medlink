@@ -1,81 +1,12 @@
 /*---------- footer area ---------*/
 
-.down-section{
-    border-top: black 3px solid;
-    text-align: right;
+.footer {
+    text-align: center;
+    background-color: var(--main-color);
+    padding: 20px;
+    margin-top: 5rem;
 }
 
-/* .fa{
-    margin-top: 20px;
-    margin-right: 50px;
-} */
-
-.down-section-icons{
-    margin-right: 30px;
-    margin-bottom: 30px;
+.footer > p {
+    color: #ffffff;
 }
-.down-section-footer{
-    background-color: navy;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 13px;
-}
-.down-main-grid{
-    display: grid;
-    grid-gap: 3px;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-}
-.down-grid-2{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, auto);
-}
-.down-section-footer p{
-    border-right: 2px solid rgba(255, 255, 255, 0.619);
-    text-align: left;
-    padding-left: 20px;
-    font-size: small;
-}
-.down-section-footer p, .down-button-info a{
-    color: rgba(255, 255, 255, 0.653);
-}
-
-.down-button-info, .down-section-context {
-    margin-top: auto;
-    margin-bottom: auto;    
-}
-@media screen and (max-width: 996px){
-    .hidden-xs{
-        display: none;
-    }
-    .down-section-footer{
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        text-align: center;
-    }
-    .down-section-footer p, .down-button-info a{
-        font-size: smaller;
-    }
-    .down-section-icons{
-        margin-right: 5px;
-        margin-bottom: 10px;
-    }
-    .down-button-info a{
-        border-right: 2px solid rgba(255, 255, 255, 0.619);
-    }
-    .down-button-info a:last-child{
-        border: none;
-    }
-    
-}
-
-
-@media screen and (min-width: 997px){
-    .hidden-lg{
-        display: none;
-    }
-}
-

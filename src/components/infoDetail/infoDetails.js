@@ -8,17 +8,17 @@ const InfoDetails = () => {
 
   return (
     <section className="details">
-      
+
       <div className="details-main">
         <h3>{facilityName}</h3>
 
         <div className="details-main--info">
           <h4>Contact Info</h4>
           <p>Address: {facilityAddress}</p>
-          <p>Email: </p>
-          <p>Tel: </p>
+          {/* <p>Email: not suppli</p>
+          <p>Tel: </p> */}
         </div>
-        
+
       </div>
 
     </section>
