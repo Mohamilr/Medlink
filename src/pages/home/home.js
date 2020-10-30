@@ -1,21 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Search from '../../components/search/search';
 import MapRenderer from '../../components/map/map';
-import Footer from '../../components/footer/footer'
+import Footer from '../../components/footer/footer';
 import Nav from '../../components/nav';
 import Banner from '../../components/banner/banner';
+import Box from '../../components/infoBox/box';
+import { useDispatch } from 'react-redux';
+import { locationAction, placeAction } from '../../actions/locationAction';
 
 const Home = () => {
-    const [results, setResults] = useState('');
-    const [lat, setLat] = useState(6.4550575);
-    const [lng, setLng] = useState(3.3941795);
+    const dispatch = useDispatch();
+
+    if('geolocation' in navigator){
+        navigator.geolocation.getCurrentPosition(setPosition, showError);
+    }else{
+
+        alert ("Browser doesn't Support Geolocation");
+    }
+
+    function setPosition(position){
+        let latitude = position.coords.latitude;
+        let longitude = position.coords.longitude;
+        let local = [ latitude, longitude ];
+
+        // redux action
+        dispatch(locationAction(local));
+        // user location saved for the details page map
+        dispatch(placeAction(local));
+    };
+
+
+   function showError(error){
+        console.log(` ${error.message}`) ;
+    }
 
     return (
         <main>
-            <Nav />
+            <Nav home="active"/>
             <Banner />
-            <Search setResults={setResults} setLat={setLat} setLng={setLng} lat={lat} lng={lng} />
-            <MapRenderer results={results} lat={lat} lng={lng} />
+            <Search />
+            <Box />
+            <MapRenderer />
             <Footer/>
         </main>
     )

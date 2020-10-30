@@ -1,7 +1,9 @@
 import React from "react";
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
-import L from 'leaflet';
-import '../../asset/css/style.css'
+import { Map, TileLayer, Marker, Popup, Polyline } from "react-leaflet";
+import L from "leaflet";
+import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import "../../asset/css/style.css";
 // place indicator icon
 const icon = L.icon({
   iconUrl:
@@ -10,27 +12,79 @@ const icon = L.icon({
   iconAnchor: [24, 14],
 });
 
-const MapRenderer = ({ results, lat, lng }) => {
+const MapRenderer = () => {
+  // get the current url
+  const url = useLocation();
+  // redux state
+  const location = useSelector((state) => state.location);
+  const coordinates = useSelector((state) => state.coordinates);
+
+  {/*
+  * DATA FOR THE DETAILS PAGE.
+  * the same map will be rendered on both the home page and details page.
+  * using the match prop to check the current page.
+  * if the url path (from 'match.path') matches /details/:id, the polyline will be rendered
+  */}
+  const coordPoints = useSelector(state => state.detailsCoordinates);
+  let markers;
+  if(coordPoints.length > 0) {
+    markers = [
+      {
+        lat: coordPoints[0][0],
+        lng: coordPoints[0][1],
+        status: "Starting point",
+      },
+      {
+        lat: coordPoints[coordPoints.length - 1][0],
+        lng: coordPoints[coordPoints.length - 1][1],
+        status: "Destination",
+      },
+    ];
+  }
+
 
   return (
     <section className="map-holder">
       <div className="map">
         <div className="text">
           <p>Nice to have you here!</p>
-          <h4>See Healthare facilities aroung you</h4>
+          <h4>See Healthare facilities around you</h4>
         </div>
-        <Map center={[lat, lng]} className='mapLayout' zoom={10}>
-                <TileLayer
-                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {results && results.map((data, index) => (
-                    <Marker key={index} marker_index={index} position={[data.lat, data.lng]} icon={icon} >
-                        <Popup>{`${data.name}, ${data.address}`}</Popup>
-                    </Marker>
-                )
-                )}
-            </Map>
+        <Map
+          center={[location[0], location[1]]}
+          className="mapLayout"
+          zoom={10}
+        >
+          <TileLayer
+            attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          {url && url.pathname.includes('/details/') ? (
+            <>
+               <Polyline positions={coordPoints} color={"red"} weight={5} />
+              {markers &&
+                markers.map((mark, index) => (
+                  <Marker key={index} position={[mark.lat, mark.lng]}>
+                    <Popup>{`${mark.status}`}</Popup>
+                  </Marker>
+                ))}
+            </>
+          ) : (
+            <>
+            {coordinates &&
+                coordinates.map((data, index) => (
+                  <Marker
+                    key={index}
+                    marker_index={index}
+                    position={[data.lat, data.lng]}
+                    icon={icon}
+                  >
+                    <Popup>{`${data.name}, ${data.address}`}</Popup>
+                  </Marker>
+                ))}
+            </>
+          )}
+        </Map>
       </div>
     </section>
   );

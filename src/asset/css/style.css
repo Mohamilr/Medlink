@@ -137,6 +137,19 @@ h1, h2, h3, h4, h5, h6 {
   transform-origin: left;
 }
 
+.menu ul li a.active {
+  color: var(--theme-color);
+}
+
+.menu ul li a.active:after {
+  content: '';
+  display: block;
+  background-color: var(--theme-color);
+  width: 100%;
+  height: 2px;
+  transform: scaleX(1);
+}
+
 .logo {
   width: 10%;
 }
@@ -147,6 +160,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-menu {
     display: none;
+}
+
+.leaflet-left .leaflet-control {
+  margin-left: 30px;
 }
 
 @media screen and (max-width: 600px) {
@@ -204,6 +221,10 @@ h1, h2, h3, h4, h5, h6 {
 
   #dn {
     display: none;
+  }
+
+  .menu ul li a.active:after {
+    transform: scaleX(0);
   }
 
 }

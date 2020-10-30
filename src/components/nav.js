@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../asset/img/Logo.png';
 
-const Nav = () => {
+const Nav = (props) => {
 
   const [menuactive, setMenuactive] = useState(false);
 
@@ -15,7 +14,7 @@ const Nav = () => {
           <div className="logo">
 
             <Link to="/">
-              <img src={logo} alt="medlink logo" />
+              <img src={'https://res.cloudinary.com/project-s/image/upload/v1603972199/Logo_pp1akc.png'} alt="medlink logo" />
             </Link>
 
           </div>
@@ -24,11 +23,11 @@ const Nav = () => {
 
             <ul>
 
-              <li><Link to="/">Home</Link></li>
+              <li><Link to="/" className={props.home}>Home</Link></li>
 
-              <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/about" className={props.about}>About Us</Link></li>
 
-              <li><Link to="/history">Search History</Link></li>
+              <li><Link to="/history" className={props.history}>Search History</Link></li>
 
             </ul>
 
